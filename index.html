@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower Defense - Smurf Invasion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="1000" height="600"></canvas>
+        <div class="ui-panel">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Gold:</span>
+                    <span id="gold" class="stat-value">500</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Lives:</span>
+                    <span id="lives" class="stat-value">20</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Wave:</span>
+                    <span id="wave" class="stat-value">1</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Kills:</span>
+                    <span id="kills" class="stat-value">0</span>
+                </div>
+            </div>
+            
+            <div class="tower-menu">
+                <h3>Towers</h3>
+                <button id="towerBasic" class="tower-btn" data-type="basic">
+                    <div class="tower-name">Basic</div>
+                    <div class="tower-cost">50G</div>
+                </button>
+                <button id="towerSniper" class="tower-btn" data-type="sniper">
+                    <div class="tower-name">Sniper</div>
+                    <div class="tower-cost">100G</div>
+                </button>
+                <button id="towerFlame" class="tower-btn" data-type="flame">
+                    <div class="tower-name">Flame</div>
+                    <div class="tower-cost">75G</div>
+                </button>
+                <button id="towerIce" class="tower-btn" data-type="ice">
+                    <div class="tower-name">Ice</div>
+                    <div class="tower-cost">120G</div>
+                </button>
+            </div>
+
+            <div class="upgrades-menu">
+                <h3>Upgrades</h3>
+                <button id="upgradeSpeed" class="upgrade-btn">
+                    <div class="upgrade-name">Fire Rate</div>
+                    <div class="upgrade-cost">150G</div>
+                    <div class="upgrade-level">Lvl: <span id="speedLevel">1</span></div>
+                </button>
+                <button id="upgradeDamage" class="upgrade-btn">
+                    <div class="upgrade-name">Damage</div>
+                    <div class="upgrade-cost">150G</div>
+                    <div class="upgrade-level">Lvl: <span id="damageLevel">1</span></div>
+                </button>
+            </div>
+
+            <button id="startWave" class="start-wave-btn">Start Wave</button>
+        </div>
+    </div>
+
+    <div id="gameOverScreen" class="game-screen hidden">
+        <div class="screen-content">
+            <h1 id="gameOverTitle">Game Over</h1>
+            <div id="gameOverStats">
+                <p>Final Wave: <span id="finalWave">0</span></p>
+                <p>Total Kills: <span id="finalKills">0</span></p>
+                <p>Gold Earned: <span id="finalGold">0</span></p>
+            </div>
+            <button id="restartBtn" class="restart-btn">Restart Game</button>
+        </div>
+    </div>
+
+    <div id="victoryScreen" class="game-screen hidden">
+        <div class="screen-content victory">
+            <h1>🎉 Victory! 🎉</h1>
+            <div id="victoryStats">
+                <p>All Waves Defeated!</p>
+                <p>Total Kills: <span id="victoryKills">0</span></p>
+                <p>Final Gold: <span id="victoryGold">0</span></p>
+            </div>
+            <button id="restartVictoryBtn" class="restart-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
